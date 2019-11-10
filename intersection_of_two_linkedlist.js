@@ -68,11 +68,16 @@ let ll2 = new LinkedList();
 ll2.addFront(6);
 ll2.addFront(7);
 ll2.addFront(8);
+
+//logic to make the list2 last element's next to list one's head .in this example node with value 5
 let ll2head = ll2.head;
 while (ll2head.next) {
   ll2head = ll2head.next;
 }
 ll2head.next = ll1.head;
+
+//printing two lists.
 ll1.printList();
 ll2.printList();
+
 console.log(findInterSection(ll1, ll2));
