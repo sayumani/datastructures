@@ -36,18 +36,18 @@ class LinkedList {
 function findInterSection(list1, list2) {
   let current1 = list1.head;
   let current2 = list2.head;
-  let map = new Map();
+  let set = new Set();
   let found = false;
   while (current1 != null) {
-    map.set(current1, true);
+    set.add(current1, true);
     current1 = current1.next;
   }
   while (current2 != null) {
-    if (map.has(current2)) {
+    if (set.has(current2)) {
       found = true;
       break;
     } else {
-      map.set(current2, true);
+      set.add(current2, true);
       current2 = current2.next;
     }
   }
